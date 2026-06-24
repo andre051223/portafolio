@@ -36,6 +36,11 @@ export const metadata: Metadata = {
     "Frontend",
   ],
   authors: [{ name: "Diego López" }],
+  icons: {
+    icon: "/profile.png",
+    shortcut: "/profile.png",
+    apple: "/profile.png",
+  },
   openGraph: {
     type: "website",
     locale: "es_CO",

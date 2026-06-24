@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    /* Scroll suave entre secciones de ancla */
+    scroll-behavior: smooth;
+    /* Compensa la navbar fija al saltar a una sección */
+    scroll-padding-top: 5rem;
+  }
+
+  body {
+    @apply bg-bg text-text-white font-sans antialiased;
+  }
+
+  /* Respeta la preferencia del sistema de movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+@layer utilities {
+  /* Texto con degradado rojo->blanco para acentos del Hero */
+  .text-gradient {
+    @apply bg-gradient-to-r from-text-white to-gray-text bg-clip-text text-transparent;
+  }
+}
+
+/* Estilo de la barra de scroll (estética coherente con la paleta) */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #0a0a0a;
+}
+::-webkit-scrollbar-thumb {
+  background: #1f1f1f;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #dc2626;
+}

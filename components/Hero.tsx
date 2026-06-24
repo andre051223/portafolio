@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen items-center overflow-hidden"
+      className="relative flex min-h-screen items-center overflow-hidden pt-28 sm:pt-32"
     >
       {/* Fondo: grid sutil con desvanecido radial */}
       <div

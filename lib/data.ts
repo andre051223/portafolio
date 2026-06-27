@@ -7,7 +7,7 @@
 export const social = {
   linkedin: "https://www.linkedin.com/in/diego-andr%C3%A9s-lopez/",
   github: "https://github.com/andre051223",
-  email: "diego.dev.2206@gmail.com",
+  email: "diegolopez.tech@gmail.com",
 };
 
 // Enlaces de navegación (anclas a cada sección)

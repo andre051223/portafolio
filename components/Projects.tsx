@@ -24,11 +24,11 @@ function ProjectCard({ project }: { project: Project }) {
 
       {/* Foto del proyecto */}
       {project.image && (
-        <div className="mb-4 overflow-hidden rounded-xl border border-gray-medium">
+        <div className="mb-4 flex aspect-video items-center justify-center overflow-hidden rounded-xl border border-gray-medium bg-bg">
           <img
             src={project.image}
             alt={project.name}
-            className="aspect-video w-full object-cover"
+            className="h-full w-full object-contain"
             loading="lazy"
           />
         </div>

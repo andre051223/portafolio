@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Section, { SectionTitle } from "./Section";
-import { skillCategories, type Skill } from "@/lib/data";
+import { type Skill } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 import { SparkleIcon } from "./icons";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
@@ -26,17 +27,17 @@ function SkillIcon({ skill }: { skill: Skill }) {
 }
 
 export default function Skills() {
+  const { t } = useLanguage();
+
   return (
     <Section id="stack">
-      <SectionTitle subtitle="Tecnologías y herramientas con las que trabajo a diario.">
-        Habilidades / Stack
-      </SectionTitle>
+      <SectionTitle subtitle={t.skills.subtitle}>{t.skills.title}</SectionTitle>
 
       <motion.div
         variants={staggerContainer(0.1)}
         className="grid grid-cols-1 gap-6 md:grid-cols-2"
       >
-        {skillCategories.map((category) => (
+        {t.skills.categories.map((category) => (
           <motion.div
             key={category.title}
             variants={staggerItem}

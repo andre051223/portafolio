@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import type { ReactNode } from "react";
 import { fadeInUp, staggerContainer } from "@/lib/animations";
+import { useLanguage } from "@/lib/i18n";
 
 interface SectionProps {
   id?: string;
@@ -16,14 +17,20 @@ interface SectionProps {
  * aparezcan en cascada. Respeta prefers-reduced-motion via <MotionConfig>.
  */
 export default function Section({ id, children, className = "" }: SectionProps) {
+  const { lang } = useLanguage();
+
   return (
     <motion.section
+      // Remonta la sección al cambiar de idioma: el contenido traducido cambia
+      // las keys de los hijos animados y, sin esto, quedarían en estado "hidden"
+      // porque whileInView (once: true) ya se consumió.
+      key={lang}
       id={id}
       variants={staggerContainer(0.1, 0.05)}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, amount: 0.2 }}
-      className={`mx-auto w-full max-w-6xl px-6 py-20 md:py-28 ${className}`}
+      className={`mx-auto w-full max-w-6xl px-6 py-10 md:py-14 ${className}`}
     >
       {children}
     </motion.section>

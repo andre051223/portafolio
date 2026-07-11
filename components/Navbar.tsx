@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
-import { navLinks } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
+import LanguageSwitch from "./LanguageSwitch";
 import { CloseIcon, DownloadIcon, MenuIcon } from "./icons";
 
 export default function Navbar() {
+  const { t } = useLanguage();
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -41,7 +43,7 @@ export default function Navbar() {
 
         {/* Links de escritorio */}
         <ul className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
+          {t.nav.links.map((link) => (
             <li key={link.href}>
               <a
                 href={link.href}
@@ -53,31 +55,35 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA escritorio */}
-        <a
-          href="/cv.pdf"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="hidden items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-text-white transition-colors hover:bg-accent-hover md:inline-flex"
-        >
-          <DownloadIcon className="h-4 w-4" />
-          Descargar CV
-        </a>
+        {/* Switch de idioma + CTA escritorio / hamburguesa móvil */}
+        <div className="flex items-center gap-3">
+          <LanguageSwitch />
 
-        {/* Botón hamburguesa (móvil) */}
-        <button
-          type="button"
-          onClick={() => setMenuOpen((v) => !v)}
-          aria-label={menuOpen ? "Cerrar menú" : "Abrir menú"}
-          aria-expanded={menuOpen}
-          className="inline-flex items-center justify-center rounded-lg p-2 text-text-white md:hidden"
-        >
-          {menuOpen ? (
-            <CloseIcon className="h-6 w-6" />
-          ) : (
-            <MenuIcon className="h-6 w-6" />
-          )}
-        </button>
+          <a
+            href={t.nav.cvUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-text-white transition-colors hover:bg-accent-hover md:inline-flex"
+          >
+            <DownloadIcon className="h-4 w-4" />
+            {t.nav.downloadCv}
+          </a>
+
+          {/* Botón hamburguesa (móvil) */}
+          <button
+            type="button"
+            onClick={() => setMenuOpen((v) => !v)}
+            aria-label={menuOpen ? t.nav.closeMenu : t.nav.openMenu}
+            aria-expanded={menuOpen}
+            className="inline-flex items-center justify-center rounded-lg p-2 text-text-white md:hidden"
+          >
+            {menuOpen ? (
+              <CloseIcon className="h-6 w-6" />
+            ) : (
+              <MenuIcon className="h-6 w-6" />
+            )}
+          </button>
+        </div>
       </nav>
 
       {/* Overlay móvil */}
@@ -99,7 +105,7 @@ export default function Navbar() {
               }}
               className="flex flex-col gap-2 px-6 py-8"
             >
-              {navLinks.map((link) => (
+              {t.nav.links.map((link) => (
                 <motion.li
                   key={link.href}
                   variants={{
@@ -124,14 +130,14 @@ export default function Navbar() {
                 className="mt-4"
               >
                 <a
-                  href="/cv.pdf"
+                  href={t.nav.cvUrl}
                   target="_blank"
                   rel="noopener noreferrer"
                   onClick={() => setMenuOpen(false)}
                   className="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-accent px-4 py-3 font-medium text-text-white transition-colors hover:bg-accent-hover"
                 >
                   <DownloadIcon className="h-5 w-5" />
-                  Descargar CV
+                  {t.nav.downloadCv}
                 </a>
               </motion.li>
             </motion.ul>

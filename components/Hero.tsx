@@ -3,13 +3,16 @@
 import { motion } from "framer-motion";
 import { ArrowRightIcon, StudyIcon, ColombiaFlagIcon } from "./icons";
 import { profile } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 export default function Hero() {
+  const { t } = useLanguage();
+
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen items-center overflow-hidden pt-28 sm:pt-32"
+      className="relative flex min-h-screen items-center overflow-hidden pb-24 pt-28 sm:pb-32 sm:pt-32"
     >
       {/* Fondo: grid sutil con desvanecido radial */}
       <div
@@ -55,7 +58,7 @@ export default function Hero() {
           variants={staggerItem}
           className="mt-6 flex flex-col items-center gap-2.5 text-gray-text"
         >
-          {profile.education.map((edu) => (
+          {t.hero.education.map((edu) => (
             <li
               key={edu.title}
               className="flex items-center gap-2 text-base sm:text-lg"
@@ -80,7 +83,7 @@ export default function Hero() {
             <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-green-500" />
             <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
           </span>
-          {profile.availability}
+          {t.hero.availability}
         </motion.div>
 
         {/* Botones CTA */}
@@ -92,14 +95,14 @@ export default function Hero() {
             href="#proyectos"
             className="group inline-flex items-center justify-center gap-2 rounded-lg bg-accent px-6 py-3 font-medium text-text-white transition-colors hover:bg-accent-hover"
           >
-            Ver proyectos
+            {t.hero.ctaProjects}
             <ArrowRightIcon className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </a>
           <a
             href="#contacto"
             className="inline-flex items-center justify-center gap-2 rounded-lg border border-text-white/30 px-6 py-3 font-medium text-text-white transition-colors hover:border-text-white hover:bg-text-white/5"
           >
-            Contactarme
+            {t.hero.ctaContact}
           </a>
         </motion.div>
       </motion.div>

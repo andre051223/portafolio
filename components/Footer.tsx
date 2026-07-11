@@ -1,13 +1,17 @@
+"use client";
+
 import { social } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 import { EmailIcon, GithubIcon, LinkedinIcon } from "./icons";
 
 export default function Footer() {
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
   return (
     <footer className="border-t border-gray-medium">
       <div className="mx-auto flex max-w-6xl flex-col items-center justify-between gap-4 px-6 py-8 sm:flex-row">
         <p className="text-sm text-gray-text">
-          © {year} Diego López. Hecho con Next.js & Tailwind CSS.
+          © {year} Diego López. {t.footer.madeWith}
         </p>
         <div className="flex items-center gap-4">
           <a

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, JetBrains_Mono } from "next/font/google";
 import { MotionConfig } from "framer-motion";
+import { LanguageProvider } from "@/lib/i18n";
 // @ts-ignore Next.js supports global CSS side-effect imports in app/layout.tsx
 import "./globals.css";
 
@@ -68,7 +69,9 @@ export default function RootLayout({
     <html lang="es" className={`${inter.variable} ${jetbrainsMono.variable}`}>
       <body>
         {/* reducedMotion="user" hace que Framer Motion respete prefers-reduced-motion */}
-        <MotionConfig reducedMotion="user">{children}</MotionConfig>
+        <LanguageProvider>
+          <MotionConfig reducedMotion="user">{children}</MotionConfig>
+        </LanguageProvider>
       </body>
     </html>
   );

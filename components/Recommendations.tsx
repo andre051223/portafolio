@@ -2,7 +2,8 @@
 
 import { motion } from "framer-motion";
 import Section, { SectionTitle } from "./Section";
-import { recommendations, type Recommendation } from "@/lib/data";
+import { type Recommendation } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 import { QuoteIcon } from "./icons";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
@@ -29,15 +30,17 @@ function RecommendationCard({ rec }: { rec: Recommendation }) {
 }
 
 export default function Recommendations() {
+  const { t } = useLanguage();
+
   return (
     <Section id="recomendaciones">
-      <SectionTitle>Recomendaciones</SectionTitle>
+      <SectionTitle>{t.recommendations.title}</SectionTitle>
 
       <motion.div
         variants={staggerContainer(0.1)}
         className="grid grid-cols-1 gap-6 md:grid-cols-2"
       >
-        {recommendations.map((rec) => (
+        {t.recommendations.items.map((rec) => (
           <RecommendationCard key={rec.author} rec={rec} />
         ))}
       </motion.div>

@@ -4,6 +4,7 @@ import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
 import Section, { SectionTitle } from "./Section";
 import { social } from "@/lib/data";
+import { useLanguage } from "@/lib/i18n";
 import { EmailIcon, GithubIcon, LinkedinIcon } from "./icons";
 import { fadeInUp } from "@/lib/animations";
 
@@ -14,6 +15,7 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/your-form-id";
 type Status = "idle" | "loading" | "success" | "error";
 
 export default function Contact() {
+  const { t } = useLanguage();
   const [status, setStatus] = useState<Status>("idle");
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
@@ -43,9 +45,7 @@ export default function Contact() {
 
   return (
     <Section id="contacto">
-      <SectionTitle subtitle="Estoy disponible para proyectos freelance y oportunidades de empleo remoto. Escríbeme.">
-        Trabajemos juntos
-      </SectionTitle>
+      <SectionTitle subtitle={t.contact.subtitle}>{t.contact.title}</SectionTitle>
 
       <div className="grid grid-cols-1 gap-10 lg:grid-cols-2">
         {/* Formulario */}
@@ -59,7 +59,7 @@ export default function Contact() {
               htmlFor="name"
               className="mb-1.5 block text-sm font-medium text-gray-text"
             >
-              Nombre
+              {t.contact.nameLabel}
             </label>
             <input
               id="name"
@@ -68,7 +68,7 @@ export default function Contact() {
               required
               autoComplete="name"
               className="w-full rounded-lg border border-gray-medium bg-bg-secondary px-4 py-3 text-text-white placeholder:text-gray-text/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-              placeholder="Tu nombre"
+              placeholder={t.contact.namePlaceholder}
             />
           </div>
 
@@ -77,7 +77,7 @@ export default function Contact() {
               htmlFor="email"
               className="mb-1.5 block text-sm font-medium text-gray-text"
             >
-              Email
+              {t.contact.emailLabel}
             </label>
             <input
               id="email"
@@ -86,7 +86,7 @@ export default function Contact() {
               required
               autoComplete="email"
               className="w-full rounded-lg border border-gray-medium bg-bg-secondary px-4 py-3 text-text-white placeholder:text-gray-text/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-              placeholder="tu@email.com"
+              placeholder={t.contact.emailPlaceholder}
             />
           </div>
 
@@ -95,7 +95,7 @@ export default function Contact() {
               htmlFor="message"
               className="mb-1.5 block text-sm font-medium text-gray-text"
             >
-              Mensaje
+              {t.contact.messageLabel}
             </label>
             <textarea
               id="message"
@@ -103,7 +103,7 @@ export default function Contact() {
               required
               rows={5}
               className="w-full resize-none rounded-lg border border-gray-medium bg-bg-secondary px-4 py-3 text-text-white placeholder:text-gray-text/60 focus:border-accent focus:outline-none focus:ring-1 focus:ring-accent"
-              placeholder="Cuéntame sobre tu proyecto…"
+              placeholder={t.contact.messagePlaceholder}
             />
           </div>
 
@@ -112,28 +112,25 @@ export default function Contact() {
             disabled={status === "loading"}
             className="inline-flex w-full items-center justify-center rounded-lg bg-accent px-6 py-3 font-medium text-text-white transition-colors hover:bg-accent-hover disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
           >
-            {status === "loading" ? "Enviando…" : "Enviar mensaje"}
+            {status === "loading" ? t.contact.submitting : t.contact.submit}
           </button>
 
           {/* Estado del envío */}
           {status === "success" && (
             <p className="text-sm text-green-500" role="status">
-              ¡Mensaje enviado! Te responderé pronto.
+              {t.contact.success}
             </p>
           )}
           {status === "error" && (
             <p className="text-sm text-accent" role="alert">
-              Hubo un error al enviar. Inténtalo de nuevo o escríbeme
-              directamente a {social.email}.
+              {t.contact.error.replace("{email}", social.email)}
             </p>
           )}
         </motion.form>
 
         {/* Links sociales */}
         <motion.div variants={fadeInUp} className="flex flex-col gap-4">
-          <p className="text-gray-text">
-            También puedes encontrarme en estos canales:
-          </p>
+          <p className="text-gray-text">{t.contact.socialIntro}</p>
           <div className="flex flex-col gap-3">
             <SocialLink
               href={social.linkedin}
@@ -144,7 +141,7 @@ export default function Contact() {
             <SocialLink
               href={social.github}
               label="GitHub"
-              detail="Ver repositorios"
+              detail="andre051223"
               icon={<GithubIcon className="h-5 w-5" />}
             />
             <SocialLink

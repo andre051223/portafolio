@@ -214,13 +214,6 @@ const es: SiteContent = {
         image: "/projects/ea-network-latam.png",
         demoUrl: "https://ea-network-latam.vercel.app/",
       },
-      {
-        name: "Perfila Career",
-        description:
-          "Plataforma de orientación vocacional para Latinoamérica. Integré la API de Anthropic en un agente conversacional con calibración cultural por país.",
-        stack: ["Next.js", "API de Anthropic", "Supabase"],
-        confidential: true,
-      },
     ],
   },
   experience: {
@@ -444,13 +437,6 @@ const en: SiteContent = {
         stack: ["Next.js", "Tailwind CSS", "Vercel"],
         image: "/projects/ea-network-latam.png",
         demoUrl: "https://ea-network-latam.vercel.app/",
-      },
-      {
-        name: "Perfila Career",
-        description:
-          "Career guidance platform for Latin America. I integrated the Anthropic API into a conversational agent with country-specific cultural calibration.",
-        stack: ["Next.js", "Anthropic API", "Supabase"],
-        confidential: true,
       },
     ],
   },

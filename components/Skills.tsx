@@ -4,11 +4,15 @@ import { motion } from "framer-motion";
 import Section, { SectionTitle } from "./Section";
 import { type Skill } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
-import { SparkleIcon } from "./icons";
+import { SparkleIcon, OpenAIIcon } from "./icons";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 // Ícono de cada tecnología: usa Simple Icons (cdn.simpleicons.org) o un genérico.
+// Algunas marcas (p. ej. OpenAI) no están en Simple Icons y usan un SVG local.
 function SkillIcon({ skill }: { skill: Skill }) {
+  if (skill.slug === "openai") {
+    return <OpenAIIcon className="h-6 w-6 text-gray-text" />;
+  }
   if (!skill.slug) {
     return <SparkleIcon className="h-6 w-6 text-gray-text" />;
   }

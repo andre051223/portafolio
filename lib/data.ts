@@ -170,6 +170,7 @@ const es: SiteContent = {
         title: "Inteligencia Artificial",
         skills: [
           { name: "API de Anthropic", slug: "anthropic" },
+          { name: "API de OpenAI", slug: "openai" },
           { name: "Make", slug: "make" },
           { name: "n8n", slug: "n8n" },
           { name: "Prompt Engineering", slug: null },
@@ -394,6 +395,7 @@ const en: SiteContent = {
         title: "Artificial Intelligence",
         skills: [
           { name: "Anthropic API", slug: "anthropic" },
+          { name: "OpenAI API", slug: "openai" },
           { name: "Make", slug: "make" },
           { name: "n8n", slug: "n8n" },
           { name: "Prompt Engineering", slug: null },

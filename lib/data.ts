@@ -254,7 +254,7 @@ const es: SiteContent = {
         items: [
           {
             company: "Amaevolucionar",
-            role: "AI Powered Content Creator & Video Editor | Proyecto Freelance",
+            role: "AI Specialist & Video Editor | Proyecto Freelance",
             dates: "Mar 2025 – Jul 2025",
             bullets: [
               "Apoyé a la fundadora de la empresa (Tania Pineda Lopetegui) en el desarrollo de Agentes de Inteligencia Artificial para optimizar los procesos internos de la empresa.",

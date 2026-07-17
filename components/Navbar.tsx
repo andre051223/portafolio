@@ -30,9 +30,11 @@ export default function Navbar() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled
-          ? "border-b border-gray-medium bg-bg/70 backdrop-blur-md"
-          : "border-b border-transparent bg-transparent"
+        menuOpen
+          ? "border-b border-gray-medium bg-bg"
+          : scrolled
+            ? "border-b border-gray-medium bg-bg/70 backdrop-blur-md"
+            : "border-b border-transparent bg-transparent"
       }`}
     >
       <nav className="mx-auto flex h-16 max-w-6xl items-center justify-between px-6">
@@ -94,7 +96,7 @@ export default function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-16 z-40 bg-bg/95 backdrop-blur-md md:hidden"
+            className="fixed inset-0 top-16 z-40 overflow-y-auto bg-bg md:hidden"
           >
             <motion.ul
               initial="hidden"

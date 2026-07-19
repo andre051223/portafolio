@@ -197,7 +197,7 @@ const es: SiteContent = {
           "Plataforma web que centraliza notas, temporizador de estudio y gestor de tareas. Arquitectura MVC con API REST.",
         stack: ["Next.js", "Tailwind CSS", "Supabase"],
         image: "/projects/studyhub.png",
-        demoUrl: "https://studyhub-diegolopez.vercel.app/",
+        demoUrl: "https://my-studyhub.vercel.app",
       },
       {
         name: "Dotaciones Sariss",
@@ -422,7 +422,7 @@ const en: SiteContent = {
           "Web platform that brings together notes, a study timer, and a task manager in one place. MVC architecture with a REST API.",
         stack: ["Next.js", "Tailwind CSS", "Supabase"],
         image: "/projects/studyhub.png",
-        demoUrl: "https://studyhub-diegolopez.vercel.app/",
+        demoUrl: "https://my-studyhub.vercel.app",
       },
       {
         name: "Dotaciones Sariss",

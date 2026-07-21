@@ -221,11 +221,11 @@ const es: SiteContent = {
     title: "Experiencia Laboral",
     categories: [
       {
-        title: "Desarrollo Web",
+        title: "Desarrollo Web & Inteligencia Artificial",
         items: [
           {
             company: "Perfila.ai",
-            role: "Desarrollador Web & Prompt Engineer",
+            role: "Desarrollador Web & Prompt Engineer | Proyecto Freelance",
             dates: "Mar 2026 – Jul 2026",
             bullets: [
               "Desarrollé plataforma de orientación vocacional para el mercado latinoamericano.",
@@ -241,18 +241,20 @@ const es: SiteContent = {
               "Gestioné el e-commerce de la empresa mediante el ERP Odoo 17.",
             ],
           },
-        ],
-      },
-      {
-        title: "Inteligencia Artificial",
-        items: [
           {
             company: "Amaevolucionar",
-            role: "AI Specialist & Video Editor | Proyecto Freelance",
+            role: "AI Specialist | Proyecto Freelance",
             dates: "Mar 2025 – Jul 2025",
             bullets: [
               "Apoyé a la fundadora de la empresa (Tania Pineda Lopetegui) en el desarrollo de Agentes de Inteligencia Artificial para optimizar los procesos internos de la empresa.",
-              "Potencié la presencia digital de la fundadora de la empresa editando los videos de su canal de YouTube y automatizando el proceso de publicación de sus post en redes sociales a través de la plataforma Metricool.",
+            ],
+          },
+          {
+            company: "ITS Infocom",
+            role: "Practicante SENA en Desarrollo de Software",
+            dates: "Nov 2022 – Mar 2023",
+            bullets: [
+              "Desarrollé diversas páginas web para integrarlas al sitio oficial de la compañía, aplicando estándares de marca y optimizando la experiencia de usuario (UX).",
             ],
           },
         ],
@@ -262,7 +264,7 @@ const es: SiteContent = {
         items: [
           {
             company: "Perfila.ai",
-            role: "Auditor de Contenido Educativo",
+            role: "Auditor de Contenido Educativo | Proyecto Freelance",
             dates: "Abr 2025 – Jul 2025",
             bullets: [
               "Revisé contenido educativo y entregué feedback cuantitativo y cualitativo.",
@@ -446,7 +448,7 @@ const en: SiteContent = {
     title: "Work Experience",
     categories: [
       {
-        title: "Web Development",
+        title: "Web Development & Artificial Intelligence",
         items: [
           {
             company: "Perfila.ai",
@@ -466,18 +468,20 @@ const en: SiteContent = {
               "Managed the company's e-commerce operations through the Odoo 17 ERP.",
             ],
           },
-        ],
-      },
-      {
-        title: "Artificial Intelligence",
-        items: [
           {
             company: "Amaevolucionar",
-            role: "AI Powered Content Creator & Video Editor | Freelance Project",
+            role: "AI Powered Content Creator | Freelance Project",
             dates: "Mar 2025 – Jul 2025",
             bullets: [
               "Partnered with the company's founder (Tania Pineda Lopetegui) to build AI agents that streamlined the company's internal processes.",
-              "Grew the founder's digital presence by editing videos for her YouTube channel and automating her social media publishing workflow through Metricool.",
+            ],
+          },
+          {
+            company: "ITS Infocom",
+            role: "Programming Apprentice",
+            dates: "Nov 2022 – Mar 2023",
+            bullets: [
+              "Built several web pages to integrate into the company's official website, applying brand standards and optimizing the user experience (UX).",
             ],
           },
         ],

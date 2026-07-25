@@ -243,7 +243,7 @@ const es: SiteContent = {
           },
           {
             company: "Amaevolucionar",
-            role: "AI AutomationSpecialist | Proyecto Freelance",
+            role: "AI Automation Specialist | Proyecto Freelance",
             dates: "Mar 2025 – Jul 2025",
             bullets: [
               "Apoyé a la fundadora de la empresa (Tania Pineda Lopetegui) en el desarrollo de Agentes de Inteligencia Artificial para optimizar los procesos internos de la empresa.",

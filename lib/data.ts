@@ -134,12 +134,8 @@ const es: SiteContent = {
         title: "Master en Inteligencia Artificial",
         institution: "Daxus Latam",
       },
-      {
-        title: "Escuela de Desarrollo Web",
-        institution: "Platzi",
-      },
     ],
-    availability: "Disponible para nuevos proyectos profesionales",
+    availability: "No disponible para nuevos proyectos",
     ctaProjects: "Ver proyectos",
     ctaContact: "Contactarme",
   },
@@ -220,6 +216,17 @@ const es: SiteContent = {
   experience: {
     title: "Experiencia Laboral",
     categories: [
+      {
+        title: "Ciberseguridad",
+        items: [
+          {
+            company: "Netdata Cybersecurity",
+            role: "Junior Customer Incident Response Engineer",
+            dates: "Ago 2026 – Actualmente",
+            bullets: [],
+          },
+        ],
+      },
       {
         title: "Desarrollo Web & Inteligencia Artificial",
         items: [
@@ -361,12 +368,8 @@ const en: SiteContent = {
         title: "Master's Program in Artificial Intelligence",
         institution: "Daxus Latam",
       },
-      {
-        title: "Web Development School",
-        institution: "Platzi",
-      },
     ],
-    availability: "Open to new professional opportunities",
+    availability: "Not available for new projects",
     ctaProjects: "View projects",
     ctaContact: "Get in touch",
   },
@@ -447,6 +450,17 @@ const en: SiteContent = {
   experience: {
     title: "Work Experience",
     categories: [
+      {
+        title: "Cybersecurity",
+        items: [
+          {
+            company: "Netdata Cybersecurity",
+            role: "Junior Customer Incident Response Engineer",
+            dates: "Aug 2026 – Present",
+            bullets: [],
+          },
+        ],
+      },
       {
         title: "Web Development & Artificial Intelligence",
         items: [

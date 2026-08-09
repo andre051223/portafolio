@@ -53,17 +53,19 @@ export default function Experience() {
                       </span>
                     </div>
 
-                    <ul className="mt-3 space-y-2">
-                      {item.bullets.map((bullet) => (
-                        <li
-                          key={bullet}
-                          className="flex gap-2 text-sm leading-relaxed text-gray-text"
-                        >
-                          <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
-                          {bullet}
-                        </li>
-                      ))}
-                    </ul>
+                    {item.bullets.length > 0 && (
+                      <ul className="mt-3 space-y-2">
+                        {item.bullets.map((bullet) => (
+                          <li
+                            key={bullet}
+                            className="flex gap-2 text-sm leading-relaxed text-gray-text"
+                          >
+                            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-accent" />
+                            {bullet}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
                   </motion.li>
                 ))}
               </ul>

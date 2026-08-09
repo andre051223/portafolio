@@ -1,7 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRightIcon, StudyIcon, ColombiaFlagIcon } from "./icons";
+import {
+  ArrowRightIcon,
+  StudyIcon,
+  ColombiaFlagIcon,
+  BriefcaseIcon,
+} from "./icons";
 import { profile } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
 import { staggerContainer, staggerItem } from "@/lib/animations";
@@ -29,7 +34,7 @@ export default function Hero() {
         variants={staggerContainer(0.15, 0.1)}
         initial="hidden"
         animate="visible"
-        className="relative z-10 mx-auto flex w-full max-w-3xl flex-col items-center px-6 text-center"
+        className="relative z-10 mx-auto flex w-full max-w-4xl flex-col items-center px-6 text-center"
       >
         {/* Foto de perfil con bandera de Colombia */}
         <motion.div variants={staggerItem} className="relative">
@@ -53,26 +58,57 @@ export default function Hero() {
           {profile.name}
         </motion.h1>
 
-        {/* Formación académica */}
-        <motion.ul
+        {/* Formación académica y trabajo, en dos tarjetas */}
+        <motion.div
           variants={staggerItem}
-          className="mt-6 flex flex-col items-center gap-2.5 text-gray-text"
+          className="mt-10 grid w-full gap-4 text-left sm:grid-cols-2"
         >
-          {t.hero.education.map((edu) => (
-            <li
-              key={edu.title}
-              className="flex items-center gap-2 text-base sm:text-lg"
-            >
+          {/* Tarjeta: Educación */}
+          <div className="flex flex-col rounded-2xl border border-gray-medium bg-bg-secondary p-6 transition-colors duration-300 hover:border-accent">
+            <div className="flex items-center justify-center gap-2.5">
               <StudyIcon className="h-5 w-5 shrink-0 text-accent" />
-              <span>
-                {edu.title}
-                {edu.institution && (
-                  <span className="text-gray-text"> · {edu.institution}</span>
-                )}
-              </span>
-            </li>
-          ))}
-        </motion.ul>
+              <h2 className="font-mono text-xs uppercase tracking-wider text-accent">
+                {t.hero.educationLabel}
+              </h2>
+            </div>
+
+            <ul className="mt-5 space-y-5">
+              {t.hero.education.map((edu) => (
+                <li key={edu.title} className="flex flex-col gap-1">
+                  <span className="font-semibold leading-snug text-text-white">
+                    {edu.title}
+                  </span>
+                  {edu.institution && (
+                    <span className="text-sm leading-snug text-gray-text">
+                      {edu.institution}
+                    </span>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Tarjeta: Trabajo */}
+          <div className="flex flex-col rounded-2xl border border-gray-medium bg-bg-secondary p-6 transition-colors duration-300 hover:border-accent">
+            <div className="flex items-center justify-center gap-2.5">
+              <BriefcaseIcon className="h-5 w-5 shrink-0 text-accent" />
+              <h2 className="font-mono text-xs uppercase tracking-wider text-accent">
+                {t.hero.workLabel}
+              </h2>
+            </div>
+
+            <ul className="mt-5 space-y-5">
+              <li className="flex flex-col gap-1">
+                <span className="font-semibold leading-snug text-text-white">
+                  {t.hero.currentRole.title}
+                </span>
+                <span className="text-sm leading-snug text-gray-text">
+                  {t.hero.currentRole.company}
+                </span>
+              </li>
+            </ul>
+          </div>
+        </motion.div>
 
         {/* Status laboral (disponibilidad) */}
         <motion.div

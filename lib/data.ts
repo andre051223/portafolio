@@ -63,10 +63,7 @@ export interface SiteContent {
     closeMenu: string;
   };
   hero: {
-    educationLabel: string;
-    workLabel: string;
     education: { title: string; institution: string }[];
-    currentRole: { title: string; company: string };
     availability: string;
     ctaProjects: string;
     ctaContact: string;
@@ -128,11 +125,9 @@ const es: SiteContent = {
     closeMenu: "Cerrar menú",
   },
   hero: {
-    educationLabel: "Educación",
-    workLabel: "Trabajo",
     education: [
       {
-        title: "Ingeniería de Sistemas | 8° Semestre",
+        title: "8° semestre de Ingeniería de Sistemas",
         institution: "Fundación Universitaria del Área Andina",
       },
       {
@@ -140,10 +135,6 @@ const es: SiteContent = {
         institution: "Daxus Latam",
       },
     ],
-    currentRole: {
-      title: "Junior Customer Incident Response Engineer",
-      company: "Netdata Cybersecurity",
-    },
     availability: "No disponible para nuevos proyectos",
     ctaProjects: "Ver proyectos",
     ctaContact: "Contactarme",
@@ -368,8 +359,6 @@ const en: SiteContent = {
     closeMenu: "Close menu",
   },
   hero: {
-    educationLabel: "Education",
-    workLabel: "Work",
     education: [
       {
         title: "Systems Engineering student, 8th semester",
@@ -380,10 +369,6 @@ const en: SiteContent = {
         institution: "Daxus Latam",
       },
     ],
-    currentRole: {
-      title: "Junior Customer Incident Response Engineer",
-      company: "Netdata Cybersecurity",
-    },
     availability: "Not available for new projects",
     ctaProjects: "View projects",
     ctaContact: "Get in touch",

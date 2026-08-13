@@ -134,10 +134,6 @@ const es: SiteContent = {
         title: "Master en Inteligencia Artificial",
         institution: "Daxus Latam",
       },
-      {
-        title: "Escuela de Desarrollo Web",
-        institution: "Platzi",
-      },
     ],
     availability: "Disponible para nuevos proyectos profesionales",
     ctaProjects: "Ver proyectos",
@@ -249,14 +245,6 @@ const es: SiteContent = {
               "Apoyé a la fundadora de la empresa (Tania Pineda Lopetegui) en el desarrollo de Agentes de Inteligencia Artificial para optimizar los procesos internos de la empresa.",
             ],
           },
-          {
-            company: "ITS Infocom",
-            role: "Practicante SENA en Desarrollo de Software",
-            dates: "Nov 2022 – Mar 2023",
-            bullets: [
-              "Desarrollé diversas páginas web para integrarlas al sitio oficial de la compañía, aplicando estándares de marca y optimizando la experiencia de usuario (UX).",
-            ],
-          },
         ],
       },
       {
@@ -360,10 +348,6 @@ const en: SiteContent = {
       {
         title: "Master's Program in Artificial Intelligence",
         institution: "Daxus Latam",
-      },
-      {
-        title: "Web Development School",
-        institution: "Platzi",
       },
     ],
     availability: "Open to new professional opportunities",
@@ -474,14 +458,6 @@ const en: SiteContent = {
             dates: "Mar 2025 – Jul 2025",
             bullets: [
               "Partnered with the company's founder (Tania Pineda Lopetegui) to build AI agents that streamlined the company's internal processes.",
-            ],
-          },
-          {
-            company: "ITS Infocom",
-            role: "Programming Apprentice",
-            dates: "Nov 2022 – Mar 2023",
-            bullets: [
-              "Built several web pages to integrate into the company's official website, applying brand standards and optimizing the user experience (UX).",
             ],
           },
         ],

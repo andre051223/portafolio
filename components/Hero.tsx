@@ -80,7 +80,8 @@ export default function Hero() {
           className="mt-8 inline-flex items-center gap-2 rounded-full border border-gray-medium bg-bg-secondary px-4 py-1.5 text-sm text-gray-text"
         >
           <span className="relative flex h-2.5 w-2.5">
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-gray-text" />
+            <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-green-500" />
+            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
           </span>
           {t.hero.availability}
         </motion.div>

@@ -229,15 +229,6 @@ const es: SiteContent = {
             ],
           },
           {
-            company: "Castor Data S.A.S",
-            role: "Desarrollador Web",
-            dates: "Ago 2025 – Dic 2025",
-            bullets: [
-              "Me enfoqué en el desarrollo e implementación de landing pages corporativas usando HTML5, CSS3 y JavaScript.",
-              "Gestioné el e-commerce de la empresa mediante el ERP Odoo 17.",
-            ],
-          },
-          {
             company: "Amaevolucionar",
             role: "AI Automation Specialist | Proyecto Freelance",
             dates: "Mar 2025 – Jul 2025",
@@ -441,15 +432,6 @@ const en: SiteContent = {
             bullets: [
               "Built a career guidance platform for the Latin American market.",
               "Integrated the Anthropic API into a multi-block conversational agent with country-specific cultural calibration.",
-            ],
-          },
-          {
-            company: "Castor Data S.A.S",
-            role: "Web Developer",
-            dates: "Aug 2025 – Dec 2025",
-            bullets: [
-              "Built and shipped corporate landing pages using HTML5, CSS3, and JavaScript.",
-              "Managed the company's e-commerce operations through the Odoo 17 ERP.",
             ],
           },
           {

@@ -74,16 +74,31 @@ export default function Hero() {
           ))}
         </motion.ul>
 
-        {/* Status laboral (disponibilidad) */}
+        {/* Trabajo actual */}
         <motion.div
           variants={staggerItem}
-          className="mt-8 inline-flex items-center gap-2 rounded-full border border-gray-medium bg-bg-secondary px-4 py-1.5 text-sm text-gray-text"
+          className="mt-8 flex items-center gap-4 rounded-2xl border border-gray-medium bg-bg-secondary px-5 py-4 text-left"
         >
-          <span className="relative flex h-2.5 w-2.5">
-            <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-green-500" />
-            <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-green-500" />
-          </span>
-          {t.hero.availability}
+          <img
+            src="/projects/Logo-LuisaBurgos.png"
+            alt={t.hero.currentJob.company}
+            width={44}
+            height={44}
+            className="h-11 w-11 shrink-0 rounded-xl object-cover"
+          />
+          <div>
+            <p className="flex items-center gap-2 font-mono text-xs uppercase tracking-wider text-gray-text">
+              <span className="relative flex h-2 w-2">
+                <span className="absolute inline-flex h-full w-full animate-pulse-dot rounded-full bg-green-500" />
+                <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
+              </span>
+              {t.hero.currentJob.label}
+            </p>
+            <p className="mt-1 font-semibold text-text-white">
+              {t.hero.currentJob.role}
+            </p>
+            <p className="text-sm text-accent">@ {t.hero.currentJob.company}</p>
+          </div>
         </motion.div>
 
         {/* Botones CTA */}

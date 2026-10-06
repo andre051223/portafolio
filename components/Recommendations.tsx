@@ -7,11 +7,19 @@ import { useLanguage } from "@/lib/i18n";
 import { QuoteIcon } from "./icons";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
-function RecommendationCard({ rec }: { rec: Recommendation }) {
+function RecommendationCard({
+  rec,
+  fullWidth,
+}: {
+  rec: Recommendation;
+  fullWidth?: boolean;
+}) {
   return (
     <motion.figure
       variants={staggerItem}
-      className="flex flex-col rounded-2xl border border-gray-medium bg-bg-secondary p-6 transition-colors duration-300 hover:border-accent"
+      className={`flex flex-col rounded-2xl border border-gray-medium bg-bg-secondary p-6 transition-colors duration-300 hover:border-accent ${
+        fullWidth ? "md:col-span-2" : ""
+      }`}
     >
       <QuoteIcon className="mb-4 h-7 w-7 shrink-0 text-accent/70" />
 
@@ -36,14 +44,32 @@ export default function Recommendations() {
     <Section id="recomendaciones">
       <SectionTitle>{t.recommendations.title}</SectionTitle>
 
-      <motion.div
-        variants={staggerContainer(0.1)}
-        className="grid grid-cols-1 gap-6 md:grid-cols-2"
-      >
-        {t.recommendations.items.map((rec) => (
-          <RecommendationCard key={rec.author} rec={rec} />
+      <div className="space-y-16">
+        {t.recommendations.groups.map((group) => (
+          <motion.div key={group.title} variants={staggerContainer(0.1)}>
+            {/* Título de la subcategoría */}
+            <motion.h3
+              variants={staggerItem}
+              className="mb-8 font-mono text-sm uppercase tracking-wider text-accent"
+            >
+              {group.title}
+            </motion.h3>
+
+            <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+              {group.items.map((rec, i) => (
+                <RecommendationCard
+                  key={`${rec.author}-${i}`}
+                  rec={rec}
+                  // Si queda una tarjeta sola en la última fila, ocupa el ancho completo
+                  fullWidth={
+                    group.items.length % 2 === 1 && i === group.items.length - 1
+                  }
+                />
+              ))}
+            </div>
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </Section>
   );
 }

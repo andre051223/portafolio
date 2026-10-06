@@ -138,6 +138,15 @@ export function SparkleIcon(props: IconProps) {
   );
 }
 
+// Logo oficial de Manychat (no está en Simple Icons), relleno con currentColor.
+export function ManychatIcon(props: IconProps) {
+  return (
+    <svg width={24} height={24} viewBox="56 44 360 360" fill="currentColor" {...props}>
+      <path d="M56 121H250V199C266 170 280 140 296 125C310 105 335 95 357 95C390 95 406 115 412 145C416 165 416 180 416 200C415 260 408 300 400 353H291C315 300 338 250 346 200C348 186 342 180 335 181C328 182 320 188 314 197C295 235 272 300 258 353H175V198H134V353H56Z" />
+    </svg>
+  );
+}
+
 export function QuoteIcon(props: IconProps) {
   return (
     <svg width={24} height={24} viewBox="0 0 24 24" fill="currentColor" {...props}>

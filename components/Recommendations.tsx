@@ -23,11 +23,18 @@ function RecommendationCard({
     >
       <QuoteIcon className="mb-4 h-7 w-7 shrink-0 text-accent/70" />
 
-      <blockquote className="flex-1 space-y-4 text-sm leading-relaxed text-gray-text">
-        {rec.quote.split("\n\n").map((paragraph, i) => (
-          <p key={i}>{paragraph}</p>
+      <div className="flex-1 divide-y divide-accent">
+        {(Array.isArray(rec.quote) ? rec.quote : [rec.quote]).map((quote, i) => (
+          <blockquote
+            key={i}
+            className="space-y-4 py-5 text-sm leading-relaxed text-gray-text first:pt-0 last:pb-0"
+          >
+            {quote.split("\n\n").map((paragraph, j) => (
+              <p key={j}>{paragraph}</p>
+            ))}
+          </blockquote>
         ))}
-      </blockquote>
+      </div>
 
       <figcaption className="mt-6 border-t border-gray-medium pt-4">
         <p className="font-semibold text-text-white">{rec.author}</p>

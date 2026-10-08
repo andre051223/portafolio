@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import Section, { SectionTitle } from "./Section";
 import { useLanguage } from "@/lib/i18n";
 import { staggerContainer, staggerItem } from "@/lib/animations";
+import { DocumentIcon, YoutubeIcon } from "./icons";
 
 export default function Experience() {
   const { t } = useLanguage();
@@ -64,6 +65,36 @@ export default function Experience() {
                         </li>
                       ))}
                     </ul>
+
+                    {(item.link || item.documents) && (
+                      <div className="mt-4 flex flex-wrap gap-3">
+                        {item.link && (
+                          <a
+                            href={item.link.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-lg bg-accent px-4 py-2 text-sm font-medium text-text-white transition-colors hover:bg-accent-hover"
+                          >
+                            <YoutubeIcon className="h-4 w-4" />
+                            {item.link.label}
+                          </a>
+                        )}
+
+                        {/* Documentos de respaldo (certificados, cartas, diplomas) */}
+                        {item.documents?.map((doc) => (
+                          <a
+                            key={doc.url}
+                            href={doc.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 rounded-lg border border-accent px-4 py-2 text-sm font-medium text-accent transition-colors hover:bg-accent hover:text-text-white"
+                          >
+                            <DocumentIcon className="h-4 w-4" />
+                            {doc.label}
+                          </a>
+                        ))}
+                      </div>
+                    )}
                   </motion.li>
                 ))}
               </ul>

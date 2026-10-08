@@ -4,7 +4,13 @@ import { motion } from "framer-motion";
 import Section, { SectionTitle } from "./Section";
 import { type Skill } from "@/lib/data";
 import { useLanguage } from "@/lib/i18n";
-import { SparkleIcon, OpenAIIcon, ManychatIcon } from "./icons";
+import {
+  SparkleIcon,
+  OpenAIIcon,
+  ManychatIcon,
+  MetricoolIcon,
+  PremiereProIcon,
+} from "./icons";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
 // Ícono de cada tecnología: usa Simple Icons (cdn.simpleicons.org) o un genérico.
@@ -15,6 +21,12 @@ function SkillIcon({ skill }: { skill: Skill }) {
   }
   if (skill.slug === "manychat") {
     return <ManychatIcon className="h-6 w-6 text-gray-text" />;
+  }
+  if (skill.slug === "metricool") {
+    return <MetricoolIcon className="h-6 w-6 text-gray-text" />;
+  }
+  if (skill.slug === "premierepro") {
+    return <PremiereProIcon className="h-6 w-6 text-gray-text" />;
   }
   if (!skill.slug) {
     return <SparkleIcon className="h-6 w-6 text-gray-text" />;
@@ -42,7 +54,7 @@ export default function Skills() {
 
       <motion.div
         variants={staggerContainer(0.1)}
-        className="grid grid-cols-1 gap-6 md:grid-cols-2"
+        className="grid grid-cols-1 gap-6 lg:grid-cols-3"
       >
         {t.skills.categories.map((category) => (
           <motion.div

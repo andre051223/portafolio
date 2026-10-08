@@ -42,6 +42,8 @@ export interface ExperienceItem {
   role: string;
   dates: string;
   bullets: string[];
+  link?: { label: string; url: string };
+  documents?: { label: string; url: string }[];
 }
 export interface ExperienceCategory {
   title: string;
@@ -49,7 +51,8 @@ export interface ExperienceCategory {
 }
 
 export interface Recommendation {
-  quote: string;
+  // Un arreglo agrupa varias recomendaciones del mismo autor en una sola tarjeta
+  quote: string | string[];
   author: string;
   role: string;
 }
@@ -161,36 +164,30 @@ const es: SiteContent = {
           { name: "API de Anthropic", slug: "anthropic" },
           { name: "API de OpenAI", slug: "openai" },
           { name: "Prompt Engineering", slug: null },
-        ],
-      },
-      {
-        title: "Herramientas de Automatización",
-        skills: [
           { name: "Make", slug: "make" },
           { name: "n8n", slug: "n8n" },
           { name: "Manychat", slug: "manychat" },
         ],
       },
       {
-        title: "Frontend",
+        title: "Creación de Contenido",
         skills: [
-          { name: "HTML5", slug: "html5" },
-          { name: "CSS3", slug: "css" },
-          { name: "JavaScript (ES6+)", slug: "javascript" },
-          { name: "TypeScript", slug: "typescript" },
-          { name: "Tailwind CSS", slug: "tailwindcss" },
-          { name: "Next.js", slug: "nextdotjs" },
+          { name: "Metricool", slug: "metricool" },
+          { name: "Adobe Premiere Pro", slug: "premierepro" },
         ],
       },
       {
-        title: "Backend, Bases de Datos y Despliegue",
+        title: "Desarrollo de Software",
         skills: [
-          { name: "Python", slug: "python" },
-          { name: "Supabase", slug: "supabase" },
-          { name: "MySQL", slug: "mysql" },
+          { name: "HTML5", slug: "html5" },
+          { name: "CSS3", slug: "css" },
+          { name: "JavaScript", slug: "javascript" },
+          { name: "Next.js", slug: "nextdotjs" },
+          { name: "Tailwind CSS", slug: "tailwindcss" },
           { name: "Git", slug: "git" },
           { name: "GitHub", slug: "github" },
           { name: "Vercel", slug: "vercel" },
+          { name: "Supabase", slug: "supabase" },
         ],
       },
     ],
@@ -237,8 +234,8 @@ const es: SiteContent = {
             role: "Appointment Setter & Social Media Manager",
             dates: "Sep 2026 – Actualidad",
             bullets: [
-              "Manejo las redes sociales de Luisa Burgos (Fundadora y Mentora en Comunicación).",
-              "Desarrollo Agentes de Inteligencia Artificial para optimizar los procesos internos de la empresa.",
+              "Manejo de las redes sociales de la fundadora (Luisa Burgos) enfocándome en prospección de clientes potenciales y planificación de posts desde Metricool.",
+              "Implementación de flujos de automatización desde Manychat.",
             ],
           },
           {
@@ -246,8 +243,14 @@ const es: SiteContent = {
             role: "AI Automation Specialist | Proyecto Freelance",
             dates: "Mar 2025 – Jul 2025",
             bullets: [
-              "Apoyé a la fundadora de la empresa (Tania Pineda Lopetegui) en el desarrollo de Agentes de Inteligencia Artificial para optimizar los procesos internos de la empresa.",
+              "Apoyé a la fundadora de la empresa (Tania Pineda Lopetegui) en la planificación de posts en redes sociales e implementación de agentes y GPTs personalizados utilizando ChatGPT como LLM.",
+
+              "Edité los videos del canal de YouTube de Tania utilizando Adobe Premiere Pro como software de edición.",
             ],
+            link: {
+              label: "Ver canal de YouTube",
+              url: "https://www.youtube.com/@taniapinedalopetegui",
+            },
           },
         ],
       },
@@ -259,8 +262,11 @@ const es: SiteContent = {
             role: "Desarrollador Web & Prompt Engineer | Proyecto Freelance",
             dates: "Mar 2026 – Jul 2026",
             bullets: [
-              "Desarrollé plataforma de orientación vocacional para el mercado latinoamericano.",
-              "Integré la API de Anthropic en un agente conversacional multi-bloque con calibración cultural por país.",
+              "Participé en el desarrollo de una plataforma de orientación vocacional dirigida al mercado laboral latinoamericano.",
+              "Configuré un agente conversacional multi-bloque impulsado con la API de Anthropic y con calibración cultural para cada país de LATAM.",
+            ],
+            documents: [
+              { label: "Ver certificado laboral", url: "/docs/certificado-perfila.pdf" },
             ],
           },
         ],
@@ -273,8 +279,10 @@ const es: SiteContent = {
             role: "Auditor de Contenido Educativo | Proyecto Freelance",
             dates: "Abr 2025 – Jul 2025",
             bullets: [
-              "Revisé contenido educativo y entregué feedback cuantitativo y cualitativo.",
-              "Revisé 75 horas de contenido en 3 meses mediante un nuevo esquema de evaluación.",
+              "Revisé todo el contenido educativo de la plataforma Perfila.ai para proporcionar feedback cuantitativo y cualitativo a la cofundadora de la Startup (Michelle Engelmann), con el objetivo de mejorar la calidad del contenido antes de su lanzamiento al público.",
+            ],
+            documents: [
+              { label: "Ver certificado laboral", url: "/docs/certificado-perfila.pdf" },
             ],
           },
           {
@@ -282,7 +290,11 @@ const es: SiteContent = {
             role: "Quality Control Associate",
             dates: "Nov 2023 – Nov 2024",
             bullets: [
-              "Revisé más de 100 cursos en áreas de programación, IA, marketing y habilidades blandas.",
+              "Participé en el programa de Associates de Platzi, en el cual, me encargué del control de calidad de más de 100 cursos de la plataforma, entre los cuales, se pueden destacar los cursos de programación, inteligencia artificial, marketing digital, inglés y habilidades blandas.",
+            ],
+            documents: [
+              { label: "Ver carta de recomendación", url: "/docs/carta-recomendacion-platzi.pdf" },
+              { label: "Ver diploma", url: "/docs/diploma-platzi.pdf" },
             ],
           },
         ],
@@ -304,25 +316,16 @@ const es: SiteContent = {
         ],
       },
       {
-        title: "Michelle Engelmann · COO Perfila.ai",
-        items: [
-          {
-            quote:
-              "Trabajé con Diego durante el desarrollo del MVP de un instrumento de orientación vocacional de Perfila, él fue una pieza clave para que el proyecto sea funcional.\n\nCuando no sabía cómo resolver algo técnico, investigaba y buscaba la manera de hacerlo. Destaco su buena actitud, disposición y ética en el trabajo.",
-            author: "Michelle Engelmann",
-            role: "COO · Perfila.ai",
-          },
-          {
-            quote:
-              "Diego formó parte del equipo revisor de Perfila durante 3 meses, y su desempeño fue excepcional. Destaca por su orientación al detalle, su compromiso y su capacidad para entregar siempre más de lo que se le solicita. Estas cualidades lo convierten en un colaborador clave y una pieza fundamental en cualquier equipo. Lo recomiendo ampliamente para proyectos que requieran precisión, dedicación y trabajo en equipo.",
-            author: "Michelle Engelmann",
-            role: "COO · Perfila.ai",
-          },
-        ],
-      },
-      {
         title: "Otras recomendaciones",
         items: [
+          {
+            quote: [
+              "Trabajé con Diego durante el desarrollo del MVP de un instrumento de orientación vocacional de Perfila, él fue una pieza clave para que el proyecto sea funcional.\n\nCuando no sabía cómo resolver algo técnico, investigaba y buscaba la manera de hacerlo. Destaco su buena actitud, disposición y ética en el trabajo.",
+              "Diego formó parte del equipo revisor de Perfila durante 3 meses, y su desempeño fue excepcional. Destaca por su orientación al detalle, su compromiso y su capacidad para entregar siempre más de lo que se le solicita. Estas cualidades lo convierten en un colaborador clave y una pieza fundamental en cualquier equipo. Lo recomiendo ampliamente para proyectos que requieran precisión, dedicación y trabajo en equipo.",
+            ],
+            author: "Michelle Engelmann",
+            role: "COO · Perfila.ai",
+          },
           {
             quote:
               "Tuve el privilegio de trabajar con Diego durante un período clave en mi empresa, y sinceramente, su aporte fue invaluable. Desde el primer día demostró un nivel de compromiso que pocas veces se ve: siempre dispuesto, rápido, con un alto estándar de calidad y una actitud proactiva que marcó la diferencia.\n\nNo solo es un programador talentoso, con una capacidad técnica excepcional y un enfoque orientado a soluciones, sino que también es una persona que se pone la camiseta por el equipo y el proyecto. Su disposición constante a aprender, adaptarse y aportar más allá de lo esperado lo convirtió en un pilar fundamental para nosotros.\n\nRecomiendo a Diego sin ninguna duda a cualquier empresa que esté buscando un profesional disciplinado, inteligente, autónomo y con una mentalidad de mejora continua. Si tienes la oportunidad de sumarlo a tu equipo, no lo dudes. Será un gran acierto.",
@@ -417,36 +420,30 @@ const en: SiteContent = {
           { name: "Anthropic API", slug: "anthropic" },
           { name: "OpenAI API", slug: "openai" },
           { name: "Prompt Engineering", slug: null },
-        ],
-      },
-      {
-        title: "Automation Tools",
-        skills: [
           { name: "Make", slug: "make" },
           { name: "n8n", slug: "n8n" },
           { name: "Manychat", slug: "manychat" },
         ],
       },
       {
-        title: "Frontend",
+        title: "Content Creation",
         skills: [
-          { name: "HTML5", slug: "html5" },
-          { name: "CSS3", slug: "css" },
-          { name: "JavaScript (ES6+)", slug: "javascript" },
-          { name: "TypeScript", slug: "typescript" },
-          { name: "Tailwind CSS", slug: "tailwindcss" },
-          { name: "Next.js", slug: "nextdotjs" },
+          { name: "Metricool", slug: "metricool" },
+          { name: "Adobe Premiere Pro", slug: "premierepro" },
         ],
       },
       {
-        title: "Backend, Databases & Deployment",
+        title: "Software Development",
         skills: [
-          { name: "Python", slug: "python" },
-          { name: "Supabase", slug: "supabase" },
-          { name: "MySQL", slug: "mysql" },
+          { name: "HTML5", slug: "html5" },
+          { name: "CSS3", slug: "css" },
+          { name: "JavaScript", slug: "javascript" },
+          { name: "Next.js", slug: "nextdotjs" },
+          { name: "Tailwind CSS", slug: "tailwindcss" },
           { name: "Git", slug: "git" },
           { name: "GitHub", slug: "github" },
           { name: "Vercel", slug: "vercel" },
+          { name: "Supabase", slug: "supabase" },
         ],
       },
     ],
@@ -493,8 +490,9 @@ const en: SiteContent = {
             role: "Appointment Setter & Social Media Manager",
             dates: "Sep 2026 – Present",
             bullets: [
-              "Manage the social media presence of Luisa Burgos (Founder and Communication Mentor).",
-              "Build AI agents to streamline the company's internal processes.",
+              "Manage the founder's (Luisa Burgos) social media, focusing on prospecting potential clients and scheduling posts with Metricool.",
+              
+              "Implement automation flows with Manychat.",
             ],
           },
           {
@@ -502,8 +500,14 @@ const en: SiteContent = {
             role: "AI Automation Specialist | Freelance Project",
             dates: "Mar 2025 – Jul 2025",
             bullets: [
-              "Partnered with the company's founder (Tania Pineda Lopetegui) to build AI agents that streamlined the company's internal processes.",
+              "Supported the company's founder (Tania Pineda Lopetegui) with social media post planning and the implementation of custom agents and GPTs using ChatGPT as Large Language Model.",
+
+              "Edited the videos for Tania's YouTube channel using Adobe Premiere Pro.",
             ],
+            link: {
+              label: "Watch YouTube channel",
+              url: "https://www.youtube.com/@taniapinedalopetegui",
+            },
           },
         ],
       },
@@ -512,11 +516,15 @@ const en: SiteContent = {
         items: [
           {
             company: "Perfila.ai",
-            role: "Web Developer & Prompt Engineer",
+            role: "Web Developer & Prompt Engineer | Freelance Project",
             dates: "Mar 2026 – Jul 2026",
             bullets: [
-              "Built a career guidance platform for the Latin American market.",
-              "Integrated the Anthropic API into a multi-block conversational agent with country-specific cultural calibration.",
+              "Participated in the development of a career guidance platform targeting the Latin American job market.",
+              
+              "Configured a multi-block conversational agent powered by the Anthropic API, with cultural calibration for each LATAM country.",
+            ],
+            documents: [
+              { label: "View employment certificate", url: "/docs/certificado-perfila.pdf" },
             ],
           },
         ],
@@ -526,11 +534,14 @@ const en: SiteContent = {
         items: [
           {
             company: "Perfila.ai",
-            role: "Educational Content Auditor",
+            role: "Educational Content Auditor | Freelance Project",
             dates: "Apr 2025 – Jul 2025",
             bullets: [
-              "Reviewed educational content and delivered quantitative and qualitative feedback.",
+              "Reviewed all of the educational content on the Perfila.ai platform to provide quantitative and qualitative feedback to the startup's co-founder (Michelle Engelmann), with the goal of improving content quality before its public launch.",
               "Audited 75 hours of content in 3 months under a newly introduced evaluation framework.",
+            ],
+            documents: [
+              { label: "View employment certificate", url: "/docs/certificado-perfila.pdf" },
             ],
           },
           {
@@ -538,7 +549,11 @@ const en: SiteContent = {
             role: "Quality Control Associate",
             dates: "Nov 2023 – Nov 2024",
             bullets: [
-              "Reviewed 100+ courses across programming, AI, marketing, and soft skills.",
+              "Took part in Platzi's Associates program, where I handled quality control for 100+ courses on the platform, including courses on programming, artificial intelligence, digital marketing, English, and soft skills.",
+            ],
+            documents: [
+              { label: "View recommendation letter", url: "/docs/carta-recomendacion-platzi.pdf" },
+              { label: "View certificate of participation", url: "/docs/diploma-platzi.pdf" },
             ],
           },
         ],
@@ -560,25 +575,16 @@ const en: SiteContent = {
         ],
       },
       {
-        title: "Michelle Engelmann · COO Perfila.ai",
-        items: [
-          {
-            quote:
-              "I worked with Diego during the development of the MVP for Perfila's career guidance assessment, and he was a key piece in making the project functional.\n\nWhenever he didn't know how to solve something technical, he researched it and found a way to get it done. I'd highlight his great attitude, willingness to help, and work ethic.",
-            author: "Michelle Engelmann",
-            role: "COO · Perfila.ai",
-          },
-          {
-            quote:
-              "Diego was part of Perfila's review team for 3 months, and his performance was exceptional. He stands out for his attention to detail, his commitment, and his ability to consistently deliver more than what is asked of him. These qualities make him a key collaborator and a core piece of any team. I highly recommend him for projects that require precision, dedication, and teamwork.",
-            author: "Michelle Engelmann",
-            role: "COO · Perfila.ai",
-          },
-        ],
-      },
-      {
         title: "Other recommendations",
         items: [
+          {
+            quote: [
+              "I worked with Diego during the development of the MVP for Perfila's career guidance assessment, and he was a key piece in making the project functional.\n\nWhenever he didn't know how to solve something technical, he researched it and found a way to get it done. I'd highlight his great attitude, willingness to help, and work ethic.",
+              "Diego was part of Perfila's review team for 3 months, and his performance was exceptional. He stands out for his attention to detail, his commitment, and his ability to consistently deliver more than what is asked of him. These qualities make him a key collaborator and a core piece of any team. I highly recommend him for projects that require precision, dedication, and teamwork.",
+            ],
+            author: "Michelle Engelmann",
+            role: "COO · Perfila.ai",
+          },
           {
             quote:
               "I had the privilege of working with Diego during a key period for my company, and honestly, his contribution was invaluable. From day one he showed a level of commitment you rarely see: always willing to help, fast, holding himself to a high standard of quality, and bringing a proactive attitude that made a real difference.\n\nHe is not only a talented programmer with exceptional technical skills and a solution-oriented mindset, but also someone who goes all in for the team and the project. His constant willingness to learn, adapt, and deliver beyond what was expected made him a cornerstone for us.\n\nI recommend Diego without hesitation to any company looking for a disciplined, intelligent, self-driven professional with a continuous-improvement mindset. If you have the chance to add him to your team, don't think twice. It will be a great call.",

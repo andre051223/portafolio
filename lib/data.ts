@@ -538,7 +538,6 @@ const en: SiteContent = {
             dates: "Apr 2025 – Jul 2025",
             bullets: [
               "Reviewed all of the educational content on the Perfila.ai platform to provide quantitative and qualitative feedback to the startup's co-founder (Michelle Engelmann), with the goal of improving content quality before its public launch.",
-              "Audited 75 hours of content in 3 months under a newly introduced evaluation framework.",
             ],
             documents: [
               { label: "View employment certificate", url: "/docs/certificado-perfila.pdf" },

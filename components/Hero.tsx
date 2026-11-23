@@ -93,6 +93,9 @@ export default function Hero() {
                 <span className="relative inline-flex h-2 w-2 rounded-full bg-green-500" />
               </span>
               {t.hero.currentJob.label}
+              <span className="rounded-full border border-accent/40 bg-accent/10 px-2 py-0.5 text-[10px] font-semibold normal-case tracking-normal text-accent">
+                {t.hero.currentJob.badge}
+              </span>
             </p>
             <p className="mt-1 font-semibold text-text-white">
               {t.hero.currentJob.role}

@@ -10,6 +10,7 @@ import {
   ManychatIcon,
   MetricoolIcon,
   PremiereProIcon,
+  N8nIcon,
 } from "./icons";
 import { staggerContainer, staggerItem } from "@/lib/animations";
 
@@ -18,6 +19,9 @@ import { staggerContainer, staggerItem } from "@/lib/animations";
 function SkillIcon({ skill }: { skill: Skill }) {
   if (skill.slug === "openai") {
     return <OpenAIIcon className="h-6 w-6 text-gray-text" />;
+  }
+  if (skill.slug === "n8n") {
+    return <N8nIcon className="h-6 w-6 text-gray-text" />;
   }
   if (skill.slug === "manychat") {
     return <ManychatIcon className="h-6 w-6 text-gray-text" />;

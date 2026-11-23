@@ -71,7 +71,7 @@ export interface SiteContent {
   };
   hero: {
     education: { title: string; institution: string }[];
-    currentJob: { label: string; role: string; company: string };
+    currentJob: { label: string; badge: string; role: string; company: string };
     ctaProjects: string;
     ctaContact: string;
   };
@@ -138,16 +138,17 @@ const es: SiteContent = {
         institution: "Platzi",
       },
       {
-        title: "Master en Inteligencia Artificial",
-        institution: "Daxus Latam",
+        title: "Escuela de Inteligencia Artificial",
+        institution: "Platzi",
       },
       {
-        title: "8° semestre de Ingeniería de Sistemas",
+        title: "9° semestre de Ingeniería de Sistemas",
         institution: "Fundación Universitaria del Área Andina",
       },
     ],
     currentJob: {
       label: "Trabajo actual",
+      badge: "Freelancer",
       role: "Appointment Setter & Social Media Manager",
       company: "Luisa Burgos",
     },
@@ -394,16 +395,17 @@ const en: SiteContent = {
         institution: "Platzi",
       },
       {
-        title: "Master's Program in Artificial Intelligence",
-        institution: "Daxus Latam",
+        title: "Artificial Intelligence School",
+        institution: "Platzi",
       },
       {
-        title: "Systems Engineering student, 8th semester",
+        title: "Systems Engineering student, 9th semester",
         institution: "Fundación Universitaria del Área Andina",
       },
     ],
     currentJob: {
       label: "Current role",
+      badge: "Freelancer",
       role: "Appointment Setter & Social Media Manager",
       company: "Luisa Burgos",
     },
